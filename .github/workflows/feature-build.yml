@@ -40,6 +40,7 @@ jobs:
       - name: Run tests
         run: dotnet test src/*.sln --configuration Release --no-build --verbosity normal
 
+
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
 
