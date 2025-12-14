@@ -96,3 +96,4 @@ jobs:
               console.log(`PR criada: ${pr.html_url}`)
             } else {
               console.log(`PR já existe: ${prs[0].html_url}`)
+            }
