@@ -32,13 +32,13 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore src/Locadora.AutoMotors.API.sln
 
       - name: Build (Release)
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build src/Locadora.AutoMotors.API.sln --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test src/Locadora.AutoMotors.API.sln --configuration Release --no-build --verbosity normal
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v2
