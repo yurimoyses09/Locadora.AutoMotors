@@ -14,12 +14,12 @@ namespace Locadora.AutoMotors.Application.Service
         }
 
         public async Task<Automovel> CreateAsync(Automovel automovel) 
-            => await _repository.Create(automovel);
+            => await _repository.CreateAsync(automovel);
 
         public async Task<Automovel> GetByIdAsync(int id) 
-            => await _repository.GetById(id);
+            => await _repository.GetByIdAsync(id);
 
         public async Task<Automovel> UpdateAsync(Automovel automovel) 
-            => await _repository.Update(automovel);
+            => await _repository.UpdateAsync(automovel);
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Locadora.AutoMotors.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Locadora.AutoMotors.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260105232412_AjusteValoresDataNullv2")]
+    partial class AjusteValoresDataNullv2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,11 +49,11 @@ namespace Locadora.AutoMotors.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("cor");
 
-                    b.Property<DateTimeOffset?>("DataAlteracao")
+                    b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("dt_alteracao");
 
-                    b.Property<DateTimeOffset>("DataCriacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("dt_criacao");
 
@@ -78,11 +81,11 @@ namespace Locadora.AutoMotors.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTimeOffset?>("DataAlteracao")
+                    b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("dt_alteracao");
 
-                    b.Property<DateTimeOffset>("DataCriacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("dt_criacao");
 
@@ -122,11 +125,11 @@ namespace Locadora.AutoMotors.Infrastructure.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("id_cliente");
 
-                    b.Property<DateTimeOffset?>("DataAlteracao")
+                    b.Property<DateTime?>("DataAlteracao")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("dt_alteracao");
 
-                    b.Property<DateTimeOffset>("DataCriacao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("dt_criacao");
 

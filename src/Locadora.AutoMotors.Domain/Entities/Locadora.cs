@@ -9,24 +9,38 @@ namespace Locadora.AutoMotors.Domain.Entities
     {
         protected Locadora() { }
 
+        public Locadora(int clienteId, int automovelId, DateTimeOffset dataInicio, DateTimeOffset dataFimPrevista, DateTimeOffset? dataFimReal, decimal valorDiaria, decimal? valorTotal, StatusAluguel status)
+        {
+            ClienteId = clienteId;
+            AutomovelId = automovelId;
+            DataInicio = dataInicio;
+            DataFimPrevista = dataFimPrevista;
+            DataFimReal = dataFimReal;
+            ValorDiaria = valorDiaria;
+            ValorTotal = valorTotal;
+            Status = status;
+        }
+
         [Column("id_cliente")]
+        [Required]
         public int ClienteId { get; private set; }
         public Cliente Cliente { get; set; }
 
         [Column("id_automovel")]
+        [Required]
         public int AutomovelId { get; private set; }
         public Automovel Automovel { get; set; }
 
         [Required]
         [Column("dt_inicio")]
-        public DateTime DataInicio { get; private set; }
+        public DateTimeOffset DataInicio { get; private set; }
 
         [Required]
         [Column("dt_fim_prevista")]
-        public DateTime DataFimPrevista { get; private set; }
+        public DateTimeOffset DataFimPrevista { get; private set; }
 
         [Column("dt_fim_real")]
-        public DateTime? DataFimReal { get; private set; }
+        public DateTimeOffset? DataFimReal { get; private set; }
 
         [Required]
         [Column("valor_diaria")]

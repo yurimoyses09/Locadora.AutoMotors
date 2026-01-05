@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Locadora.AutoMotors.Domain.Entities;
 
 namespace Locadora.AutoMotors.Application.IService
 {
-    internal interface ILocadoraService
+    public interface ILocadoraService
     {
+        Task<Domain.Entities.Locadora> CreateAsync(Domain.Entities.Locadora locadora);
+        Task<Domain.Entities.Locadora> UpdateAsync(Domain.Entities.Locadora locadora);
+        Task<Domain.Entities.Locadora> GetByIdAsync(int id);
     }
 }

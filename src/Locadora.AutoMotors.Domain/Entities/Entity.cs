@@ -17,9 +17,9 @@ namespace Locadora.AutoMotors.Domain.Entities
 
         [Required]
         [Column("dt_criacao")]
-        public DateTime DataCriacao { get; set; } = DateTime.UtcNow;
+        public DateTimeOffset DataCriacao { get; set; } = DateTime.UtcNow;
 
         [Column("dt_alteracao")]
-        public DateTime DataAlteracao { get; set; }
+        public DateTimeOffset? DataAlteracao { get; set; }
     }
 }

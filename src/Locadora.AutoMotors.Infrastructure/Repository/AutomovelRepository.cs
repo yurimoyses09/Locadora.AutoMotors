@@ -14,7 +14,7 @@ namespace Locadora.AutoMotors.Infrastructure.Repository
             _context = context;
         }
 
-        public async Task<Automovel> Create(Automovel obj)
+        public async Task<Automovel> CreateAsync(Automovel obj)
         {
             await _context.Automoveis.AddAsync(obj);
             await _context.SaveChangesAsync();
@@ -22,7 +22,7 @@ namespace Locadora.AutoMotors.Infrastructure.Repository
             return obj;
         }
 
-        public async Task<int> DeleteById(int id)
+        public async Task<int> DeleteByIdAsync(int id)
         {
             var item = await _context.Automoveis.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -30,12 +30,12 @@ namespace Locadora.AutoMotors.Infrastructure.Repository
             return await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Automovel>> GetAll()
+        public Task<IEnumerable<Automovel>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Automovel> GetById(int id)
+        public async Task<Automovel> GetByIdAsync(int id)
         {
             var obj = await _context.Automoveis.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -45,7 +45,7 @@ namespace Locadora.AutoMotors.Infrastructure.Repository
             return obj;
         }
 
-        public Task<Automovel> Update(Automovel entity)
+        public Task<Automovel> UpdateAsync(Automovel entity)
         {
             throw new NotImplementedException();
         }

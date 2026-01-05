@@ -20,6 +20,9 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IAutomovelRepository, AutomovelRepository>();
 builder.Services.AddScoped<IAutomovelService, AutomovelService>();
 
+builder.Services.AddScoped<ILocadoraService, LocadoraService>();
+builder.Services.AddScoped<ILocadoraRepository, LocadoraRepository>();
+
 // String de conexão PostgreSQL
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

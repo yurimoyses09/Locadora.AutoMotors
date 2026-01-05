@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace Locadora.AutoMotors.Application.IRepository
+﻿namespace Locadora.AutoMotors.Application.IRepository
 {
     public interface IBaseRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAll();
-        Task<T> GetById(int id);
-        Task<T> Create(T obj);
-        Task<T> Update(T entity);
-        Task<int> DeleteById(int id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetByIdAsync(int id);
+        Task<T> CreateAsync(T obj);
+        Task<T> UpdateAsync(T entity);
+        Task<int> DeleteByIdAsync(int id);
     }
 }
