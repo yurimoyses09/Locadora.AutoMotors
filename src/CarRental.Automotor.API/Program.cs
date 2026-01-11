@@ -1,3 +1,8 @@
+using CarRental.Automotor.Application.IRepository;
+using CarRental.Automotor.Application.IService;
+using CarRental.Automotor.Application.Service;
+using CarRental.Automotor.Infrastructure.Context;
+using CarRental.Automotor.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
