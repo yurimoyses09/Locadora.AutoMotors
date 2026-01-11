@@ -1,16 +1,15 @@
+using Microsoft.EntityFrameworkCore;
 using CarRental.Automotor.Application.IRepository;
 using CarRental.Automotor.Application.IService;
 using CarRental.Automotor.Application.Service;
-using CarRental.Automotor.Infrastructure.Context;
 using CarRental.Automotor.Infrastructure.Repository;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using CarRental.Automotor.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -18,11 +17,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
+builder.Services.AddScoped<IAutomobileRepository, AutomobileRepository>();
+builder.Services.AddScoped<IAutomobileService, AutomobileService>();
 
 builder.Services.AddScoped<IRentalService, RentalService>();
 builder.Services.AddScoped<IRentalRepository, RentalRepository>();
 
-// String de conex„o PostgreSQL
+// String de conex√£o PostgreSQL
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Registrar DbContext
